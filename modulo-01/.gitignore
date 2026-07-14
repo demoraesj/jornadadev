@@ -1,9 +1,0 @@
-# Executáveis
-*.exe
-
-# Arquivos temporários do Harbour
-*.obj
-*.o
-*.c
-*.tds
-*.log
