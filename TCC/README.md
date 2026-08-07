@@ -26,7 +26,7 @@ A rotina STTZZ1 permite:
 - Alteração de registros;
 - Exclusão de registros;
 - Consulta de certificados;
-- Pesquisa por registros;
+- Pesquisa de registros;
 - Acesso à rotina de ocorrências do certificado.
 
 ---
@@ -43,24 +43,26 @@ A rotina STTZZ2 permite:
 
 # Estrutura do Projeto
 
-```
+```text
 TCC
 │
 ├── Dados-e-Dicionario
-│   ├── Consultas.csv
-│   ├── Gatilhos.csv
-│   ├── Indices.csv
-│   ├── ZZ1.csv
-│   ├── ZZ2.csv
+│   ├── sigacom.xnu
+│   ├── six990.dbf
+│   ├── sx2990.dbf
+│   ├── sx3990.dbf
+│   ├── sx7990.dbf
+│   ├── zz1.dbf
+│   ├── zz2.dbf
 │   └── README.md
 │
 ├── evidencias
 │
+├── ESPECIFICACAO.md
+├── README.md
 ├── STTZZ1.PRW
 ├── STTZZ2.PRW
-├── STTZZLIB.PRW
-├── TCC.PRJ
-└── README.md
+└── STTZZLIB.PRW
 ```
 
 ---
@@ -146,13 +148,13 @@ Biblioteca utilizada para centralizar funções auxiliares compartilhadas entre 
 
 Foram criados índices para facilitar a localização dos registros.
 
-## ZZ1
+### ZZ1
 
 - Chave Primária
 - Por Fornecedor
 - Por Validade
 
-## ZZ2
+### ZZ2
 
 - Chave Primária
 - Por Controle
@@ -185,15 +187,13 @@ Exemplos:
 - Existência do certificado;
 - Existência do produto.
 
-Durante os testes foi identificado um ajuste pendente na configuração de um gatilho do SX7 relacionado ao preenchimento automático da tabela ZZ2, não comprometendo a implementação das rotinas desenvolvidas.
+Durante os testes funcionais foi identificado um ajuste pendente na configuração de um gatilho SX7 relacionado ao preenchimento automático da tabela ZZ2, sem comprometer a implementação das rotinas desenvolvidas.
 
 ---
 
 # Evidências
 
-As evidências do desenvolvimento encontram-se na pasta **/evidencias**.
-
-Conteúdo:
+As evidências do desenvolvimento encontram-se na pasta **/evidencias**, contendo:
 
 - Criação das tabelas;
 - Campos;
@@ -209,13 +209,12 @@ Conteúdo:
 
 # Dados e Dicionário
 
-A pasta **Dados-e-Dicionario** contém os arquivos exportados utilizados durante o desenvolvimento:
+A pasta **Dados-e-Dicionario** contém os arquivos exportados do ambiente Protheus utilizados no desenvolvimento do projeto, incluindo:
 
-- Estrutura das tabelas;
-- Índices;
-- Gatilhos;
-- Consultas;
-- Definições do Dicionário de Dados.
+- Definições do Dicionário de Dados (SX2, SX3 e SX7);
+- Índices do sistema (SIX);
+- Definição do menu (SIGACOM.XNU);
+- Tabelas do projeto (ZZ1 e ZZ2).
 
 ---
 
